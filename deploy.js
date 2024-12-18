@@ -1,10 +1,11 @@
 const ethers = require("ethers")
+const { solidityKeccak256 } = require("ethers/lib/utils")
 const fs = require("fs-extra")
 
 async function main() {
     // http://127.0.0.1:7545
     const provider = new ethers.providers.JsonRpcProvider("http://127.0.0.1:7545")
-    const wallet = new ethers.Wallet("0x1b81b3137ed0bb1a54bca6708d63830d203bc4b6c9e699dba7109f5e062f17e2", provider)
+    const wallet = new ethers.Wallet("0xbed313a98b1fb172a48f8b350f8e7dd2fc9b24a60028001feff0a46e7ca18764", provider)
     const abi = fs.readFileSync("./SimpleStorage_sol_SimpleStorage.abi", "utf-8")
      const binary = fs.readFileSync("./SimpleStorage_sol_SimpleStorage.bin", "utf8")
 
